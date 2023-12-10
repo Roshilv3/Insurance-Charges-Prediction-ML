@@ -1,0 +1,8 @@
+[ 2023-12-11 04:53:58,136 ] 25 root - INFO - Entered the data ingestion
+[ 2023-12-11 04:53:58,169 ] 29 root - INFO - Read the data
+[ 2023-12-11 04:53:58,181 ] 34 root - INFO - train-test-split initiate
+[ 2023-12-11 04:53:58,197 ] 41 root - INFO - Ingestion of Data is Completed
+[ 2023-12-11 04:53:58,226 ] 68 root - INFO - Reading train and test dataset
+[ 2023-12-11 04:53:58,226 ] 47 root - INFO - Categorical column: ['sex', 'smoker', 'region']
+[ 2023-12-11 04:53:58,226 ] 48 root - INFO - Numerical column: ['age', 'bmi', 'children']
+[ 2023-12-11 04:53:58,228 ] 82 root - INFO - Applying preprocessing object on training and testing data

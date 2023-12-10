@@ -1,0 +1,14 @@
+README.md
+setup.py
+Insurance_Charges_Prediction_ML_Project.egg-info/PKG-INFO
+Insurance_Charges_Prediction_ML_Project.egg-info/SOURCES.txt
+Insurance_Charges_Prediction_ML_Project.egg-info/dependency_links.txt
+Insurance_Charges_Prediction_ML_Project.egg-info/top_level.txt
+src/__init__.py
+src/exception.py
+src/logger.py
+src/utils.py
+src/components/__init__.py
+src/components/data_ingestion.py
+src/components/data_transformation.py
+src/components/model_trainer.py
