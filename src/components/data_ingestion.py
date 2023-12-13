@@ -5,7 +5,8 @@ import sys
 from src.exception import CustomException
 from src.logger import logging
 
-from src.components.data_transformation import DataTransformation, DataTransformationConfig
+from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 
 from sklearn.model_selection import train_test_split
@@ -27,6 +28,11 @@ class DataIngestion:
         try:
             df = pd.read_csv('notebook\data\insurance.csv')
             logging.info("Read the data")
+
+            # If any duplicate value found then remove the duplicate value.
+            while any(df.duplicated()):
+                df = df.drop_duplicates(ignore_index=True)
+
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
             df.to_csv(self.ingestion_config.raw_data_path, index=False, header=True)
@@ -53,6 +59,8 @@ if __name__=="__main__":
     train_data, test_data = obj.initiate_data_ingestion()
 
     data_transformation = DataTransformation()
-    train_arr, test_arr,_ = data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr, test_arr,_= data_transformation.initiate_data_transformation(train_data,test_data)
 
+    Model_trainer = ModelTrainer()
+    print(ModelTrainer.initiate_model_trainer(self=Model_trainer,train_arr=train_arr, test_arr=test_arr))
     
