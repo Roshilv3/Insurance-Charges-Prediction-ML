@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+
 from src.pipeline.predict_pipeline import CustomData, PredictPipeline
 
 
