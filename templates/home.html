@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insurance Charges Indicator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: #ffffff;
+            }
+    
+            .login {
+                max-width: 650px;
+                margin: 10px auto;
+                padding: 50px;
+                border: 1px solid #ffffff;
+                border-radius: 10px;
+                background-color: #fbec1f;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+    
+            h1, h2 {
+                text-align: center;
+            }
+    
+            form {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+<body>
+    <div class="login">
+       <h1>Insurance Charges Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Charges Prediction</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Age</label>
+            <input class="form-control" type="number" name="age"
+                placeholder="Enter your Age" min='18' max='70' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sex</label>
+            <select class="form-control" name="sex" placeholder="Enter you Gender" required>
+                <option class="placeholder" selected disabled value="">Select your Sex</option>
+                <option value="male">
+                    Male
+                </option>
+                <option value="female">
+                    Female
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Body Mass Index</label>
+            <input class="form-control" type="number" name="bmi"
+                placeholder="Enter your bmi" min='15' max='60' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Childrens</label>
+            <select class="form-control" name="Children" placeholder="Childrens" required>
+                <option class="placeholder" selected disabled value="">Select Children</option>
+                <option value="0">
+                    0
+                </option>
+                <option value="1">
+                    1
+                </option>
+                <option value="2">
+                    2
+                </option>
+                <option value="3">
+                    3
+                </option>
+                <option value="4">
+                    4
+                </option>
+                <option value="5">
+                    5
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Smoker</label>
+            <select class="form-control" name="Children" placeholder="Smoker" required>
+                <option class="placeholder" selected disabled value="">Select Smoke</option>
+                <option value="yes">
+                    Yes
+                </option>
+                <option value="no">
+                    No
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Region</label>
+            <select class="form-control" name="region" placeholder="Region" required>
+                <option class="placeholder" selected disabled value="">Select Region</option>
+                <option value="southwest">
+                    SouthWest
+                </option>
+                <option value="southeast">
+                    SouthEast
+                </option>
+                <option value="northwest">
+                    NorthWest
+                </option>
+                <option value="northeast">
+                    NorthEast
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Your Charges" required />
+        </div>
+    </form>
+    <h2>
+       THE CHARGES IS {{results}}
+    </h2>
+   <body>
+</html>
