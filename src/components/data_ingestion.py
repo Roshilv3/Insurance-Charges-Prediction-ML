@@ -28,6 +28,10 @@ class DataIngestion:
             df=pd.read_csv('notebook\data\insurance.csv')
             logging.info('Read the dataset as dataframe')
 
+          
+            df = df.drop_duplicates(ignore_index=True)
+            
+
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
 
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
